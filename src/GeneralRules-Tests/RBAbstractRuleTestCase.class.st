@@ -4,7 +4,7 @@ Class {
 	#category : #'GeneralRules-Tests'
 }
 
-{ #category : #'test-support' }
+{ #category : #'as yet unclassified' }
 RBAbstractRuleTestCase >> critiguesFor: ruleClass onMethod: method [
 	| critiques |
 	critiques := OrderedCollection new.
@@ -13,7 +13,7 @@ RBAbstractRuleTestCase >> critiguesFor: ruleClass onMethod: method [
 	^critiques 
 ]
 
-{ #category : #'test-support' }
+{ #category : #'as yet unclassified' }
 RBAbstractRuleTestCase >> myCritiguesOnMethod: method [
 	| critiques |
 	critiques := OrderedCollection new.
@@ -22,21 +22,16 @@ RBAbstractRuleTestCase >> myCritiguesOnMethod: method [
 	^critiques 
 ]
 
-{ #category : #'test-support' }
-RBAbstractRuleTestCase >> myCritiques [
+{ #category : #'as yet unclassified' }
+RBAbstractRuleTestCase >> myCritiquesOnFoo [
 	| critiques |
 	critiques := OrderedCollection new.
 	self subjectUnderTest  new 
-		check: (self class >> #sampleMethod ) forCritiquesDo:[:critique | critiques add: critique].
+		check: (self class >> #foo ) forCritiquesDo:[:critique | critiques add: critique].
 	^critiques 
 ]
 
-{ #category : #'test-support' }
-RBAbstractRuleTestCase >> sourceAtChritique: critique [
-	^ critique sourceAnchor in: [ :anchor | anchor entity sourceCode atAll: anchor interval ]
-]
-
-{ #category : #'test-support' }
-RBAbstractRuleTestCase >> subjectUnderTest [ 
+{ #category : #'as yet unclassified' }
+RBAbstractRuleTestCase >> subjectUnderTest [
 	^(self class name allButLast: 4) asClass
 ]
