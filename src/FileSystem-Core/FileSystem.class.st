@@ -82,6 +82,7 @@ FileSystem >> beReadOnly [
 
 { #category : 'public' }
 FileSystem >> beWritable [
+	"Sets the file system to a writable state"
 
 	store := store asWritableStore
 ]

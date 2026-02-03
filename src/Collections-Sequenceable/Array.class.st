@@ -295,7 +295,8 @@ Array >> printOn: aStream [
 	self shouldBePrintedAsLiteral ifTrue: [self printAsLiteralFormOn: aStream. ^ self].
 	self isSelfEvaluating ifTrue: [self printAsSelfEvaluatingFormOn: aStream. ^ self].
 
-	super printOn: aStream
+	"super printOn: aStream"
+	self printElementsOn: aStream
 ]
 
 { #category : 'enumerating' }
